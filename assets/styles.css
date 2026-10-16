@@ -10,3 +10,6 @@
 /* Marca visual Reliability Lab: símbolo legível em cabeçalho desktop e mobile */
 .brand-logo{display:block;flex:none;width:42px;height:44px;object-fit:contain;border-radius:9px;background:#fff;box-shadow:0 0 0 1px #2b7280}
 @media(max-width:520px){.brand-logo{width:35px;height:37px;border-radius:7px}}
+
+/* Assinatura comum do portfólio Talita Souza; preservar marca RL e identidade FMEA. */
+.portfolio-signature{display:flex;align-items:center;gap:10px}.portfolio-signature img{flex-shrink:0;width:28px;height:28px}.portfolio-signature b,.portfolio-signature span{display:block}.portfolio-signature span{font-size:10px;color:#98b7c5;margin-top:4px}
