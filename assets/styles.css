@@ -6,3 +6,7 @@
 .score-hint{font-size:10px;color:#81bcc0;line-height:1.45;font-weight:450}
 .guide-dialog{width:min(870px,96vw)}.guide-warning{background:#352d26;border:1px solid #876c44;border-radius:8px;padding:12px;color:#ffdda4;font-size:12px;line-height:1.55}.grade-section{margin-top:20px}.grade-section h3{color:#e6f7f8;font-size:15px;margin:0 0 7px}.grade-section p{font-size:11px;color:#8cabb6;line-height:1.5}.grade-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.grade-card{display:flex;align-items:flex-start;gap:11px;padding:10px;border:1px solid #294555;background:#102b3d;border-radius:6px;font-size:11px;color:#c6dfe5;line-height:1.45}.grade-card b{border-radius:6px;flex:0 0 25px;text-align:center;color:#11232a;background:#72cbbd;padding:4px 0}
 @media(max-width:600px){.grade-grid{grid-template-columns:1fr}.guide-panel .panel-head{flex-direction:column}.guide-summary .button{width:100%;white-space:normal;height:auto;min-height:42px;text-align:center}.source-notice{align-items:flex-start}}
+
+/* Marca visual Reliability Lab: símbolo legível em cabeçalho desktop e mobile */
+.brand-logo{display:block;flex:none;width:42px;height:44px;object-fit:contain;border-radius:9px;background:#fff;box-shadow:0 0 0 1px #2b7280}
+@media(max-width:520px){.brand-logo{width:35px;height:37px;border-radius:7px}}

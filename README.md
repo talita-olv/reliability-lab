@@ -1,7 +1,13 @@
+<p align="center">
+  <img src="assets/logo-reliability-lab.webp" alt="Reliability Lab — FMEA e Criticidade" width="370" />
+</p>
+
 # Reliability Lab · FMEA & Criticidade
 
 **Laboratório interativo de confiabilidade e priorização de modos de falha — Versão 1.1**  
 Desenvolvido por **Talita Souza** · Engenharia de Controle e Automação · PCM, dados e automação
+
+**[Abrir a demonstração online ↗](https://talita-olv.github.io/reliability-lab/)**
 
 [![Testes](https://img.shields.io/badge/testes-Node.js-4ad7be?style=flat-square&logo=nodedotjs&logoColor=black)](./tests) [![JavaScript](https://img.shields.io/badge/JavaScript-sem%20framework-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](./assets/app.mjs) [![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-79aefa?style=flat-square)](LICENSE)
 
@@ -86,6 +92,8 @@ reliability-lab/
 ├── index.html                   # Interface
 ├── assets/
 │   ├── styles.css               # Identidade visual responsiva
+│   ├── logo-reliability-lab.webp # Marca completa (GitHub e documentação)
+│   ├── logo-mark.webp            # Símbolo compacto e favicon
 │   ├── app.mjs                  # Interação, filtros, importação e edição
 │   ├── core.mjs                 # Regras e CSV testáveis
 │   └── demo.mjs                 # Base fictícia
