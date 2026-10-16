@@ -5,11 +5,10 @@ Desenvolvido por **Talita Souza** · Engenharia de Controle e Automação · PCM
 
 [![Testes](https://img.shields.io/badge/testes-Node.js-4ad7be?style=flat-square&logo=nodedotjs&logoColor=black)](./tests) [![JavaScript](https://img.shields.io/badge/JavaScript-sem%20framework-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](./assets/app.mjs) [![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-79aefa?style=flat-square)](LICENSE)
 
-![Prévia do Reliability Lab](docs/preview.webp)
+![Visão ilustrativa do Reliability Lab](docs/overview.svg)
 
 > **Atenção:** projeto demonstrativo independente, com dados inteiramente fictícios. As escalas e faixas de prioridade são ilustrativas. Não se trata de uma aplicação normativa certificada nem de uma ferramenta de decisão de segurança.
 
-![Visão do Reliability Lab v1.1](docs/preview.webp)
 
 ## O problema
 
@@ -94,7 +93,7 @@ reliability-lab/
 ├── exemplos/fmea_modelo.xlsx     # Modelo Excel com orientações
 ├── docs/metodologia.md          # Critérios e limitações
 ├── docs/GUIA_DO_USUARIO.md      # Uso sem programação
-├── docs/relatorio-exemplo.pdf   # PDF demonstrativo gerado nos testes
+├── docs/overview.svg           # Ilustração do painel demonstrativo
 ├── tests/core.test.mjs          # Testes automatizados
 ├── .github/workflows/tests.yml  # CI no GitHub Actions
 ├── .nojekyll                    # GitHub Pages
