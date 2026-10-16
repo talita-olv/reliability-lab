@@ -1,7 +1,3 @@
-![Reliability Lab — Identidade Talita Souza](assets/project-banner.svg)
-
-<p align="center"><img src="assets/logo-reliability-lab.webp" alt="Logo própria Reliability Lab" width="220" /></p>
-
 # Reliability Lab · FMEA & Criticidade
 
 **Laboratório interativo de confiabilidade e priorização de modos de falha — Versão 1.1**  
@@ -32,7 +28,9 @@ Planilhas isoladas de modos de falha dificultam a visualização da exposição 
 - Gerar **relatório de análise e plano de ação para salvar em PDF** através do diálogo de impressão do navegador, mantendo critérios e filtros visíveis.
 - Executar **testes automatizados**, sem dependências externas de execução.
 
-## Como executar
+## Como utilizar
+
+### Abrir localmente
 
 O sistema é composto por HTML, CSS e módulos JavaScript nativos. Por usar módulos ES, acesse-o por um servidor HTTP local (em vez de abrir `index.html` via `file://`).
 
@@ -54,7 +52,7 @@ npm test
 
 **Requisitos para testes:** Node.js 20 ou superior. Não é necessário `npm install`.
 
-## Como experimentar
+### Experimentar a demonstração
 
 1. Abra a página e explore os indicadores e o mapa de risco alimentados pela base fictícia.
 2. Filtre os modos de falha por prioridade e status; experimente ordenações diferentes.
@@ -83,6 +81,17 @@ A matriz 5 × 5 é uma **visualização separada**, calculada a partir de S e O.
 **Privacidade:** os arquivos CSV são processados localmente em memória no navegador. Não há conta, backend, cookies do aplicativo, armazenamento persistente ou telemetria própria. Não importe dados operacionais confidenciais em ambientes não aprovados pela sua organização. O PDF também é gerado localmente pela impressão do navegador: a aplicação abre uma janela de pré-visualização, não gera um download PDF silencioso. O provedor de hospedagem pode registrar acessos normais ao site.
 
 **Atenção a diferenças de metodologia:** a abordagem é inspirada na lógica clássica de FMEA, não implementa integralmente IEC 60812, AIAG & VDA Action Priority, classificação SIL, LOPA, APR ou decisões sobre integridade de sistemas.
+
+## Tecnologias
+
+| Tecnologia | Finalidade |
+| --- | --- |
+| HTML, CSS e JavaScript nativo | Interface responsiva, edição em sessão e análise FMEA |
+| `assets/core.mjs`, `assets/scales.mjs` | Regras de priorização, notas ilustrativas e validação |
+| `assets/app.mjs` e `assets/report.mjs` | Interface, filtros e relatório por impressão do navegador |
+| CSV / Excel | Importação e exportação de bases demonstrativas |
+| Node.js | Execução de testes, sem dependências externas de execução |
+| GitHub Pages | Hospedagem da demonstração pública |
 
 ## Estrutura
 
@@ -120,5 +129,9 @@ reliability-lab/
 Criado por **[Talita Souza](https://github.com/talita-olv)** · [LinkedIn](https://www.linkedin.com/in/talita-souza-136590122/)
 
 ## Identidade visual do portfólio
+
+<img src="assets/logo-reliability-lab.webp" alt="Logotipo específico do Reliability Lab" width="190" />
+
+![Banner de identidade visual Reliability Lab, da família Talita Souza](assets/project-banner.svg)
 
 O **Reliability Lab** mantém seu símbolo e sua identidade de confiabilidade. Em conjunto com **SmartRoute**, **Mapa 52 Semanas** e demais soluções, utiliza uma marca-mãe comum: [Talita Souza — Engenharia, Dados e Automação](assets/talita-brand.svg). O símbolo compartilhado em SVG identifica a autoria, não substitui o nome e as finalidades técnicas do laboratório.
