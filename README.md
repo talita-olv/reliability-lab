@@ -15,7 +15,6 @@ Desenvolvido por **Talita Souza** · Engenharia de Controle e Automação · PCM
 
 > **Atenção:** projeto demonstrativo independente, com dados inteiramente fictícios. As escalas e faixas de prioridade são ilustrativas. Não se trata de uma aplicação normativa certificada nem de uma ferramenta de decisão de segurança.
 
-
 ## O problema
 
 Planilhas isoladas de modos de falha dificultam a visualização da exposição a riscos, a rastreabilidade das avaliações e a priorização de atividades. Este projeto demonstra como combinar **FMEA**, análise de dados e interface digital para organizar informações, **sem substituir revisão técnica**.
@@ -108,13 +107,6 @@ reliability-lab/
 ├── package.json
 └── LICENSE
 ```
-
-## Publicar no GitHub Pages
-
-1. Crie um repositório público chamado `reliability-lab`.
-2. Suba a estrutura completa deste projeto na branch `main`.
-3. Em **Settings → Pages → Build and deployment**, selecione **Deploy from a branch**, `main` e `/ (root)`.
-4. Após a publicação, o endereço padrão será `https://talita-olv.github.io/reliability-lab/` (o endereço só funcionará depois que o GitHub concluir o deploy).
 
 ## Possíveis evoluções
 
