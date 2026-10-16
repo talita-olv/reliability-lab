@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c1826" />
+  <meta name="description" content="Reliability Lab: demonstração interativa de FMEA, criticidade, mapa de risco e priorização com dados fictícios." />
+  <title>Reliability Lab | FMEA &amp; Criticidade</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Reliability Lab — início"><span class="brand-mark" aria-hidden="true">R<span>↗</span></span><span>RELIABILITY <b>LAB</b><small>ENGINEERING INTELLIGENCE</small></span></a>
+      <nav class="top-links" aria-label="Navegação principal">
+        <a href="#visao-geral">Visão geral</a><a href="#matriz">Mapa de risco</a><a href="#registros">Registros</a>
+      </nav>
+      <a class="github-link" href="https://github.com/talita-olv" target="_blank" rel="noopener noreferrer">Portfólio no GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> DEMONSTRAÇÃO DE PORTFÓLIO <span class="separator">/</span> EXEMPLOS FICTÍCIOS</div>
+          <h1 id="hero-title">Confiabilidade começa<br />com <em>decisões melhores.</em></h1>
+          <p>Explore modos de falha, avalie riscos e organize planos de ação com uma abordagem FMEA demonstrativa, transparente e verificável.</p>
+          <div class="hero-pills"><span>FMEA ilustrativa</span><span>Sem login</span><span>Processamento local</span></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit-core"><span>RPN</span><b>S · O · D</b></div><div class="orbit-node a">S</div><div class="orbit-node b">O</div><div class="orbit-node c">D</div></div>
+      </section>
+      <section class="workspace" id="visao-geral" aria-label="Painel de análise">
+        <div class="section-heading"><div><p class="kicker">01 / DIAGNÓSTICO</p><h2>Visão geral de criticidade</h2><p class="muted">Indicadores recalculados a partir da sua seleção de registros.</p></div>
+          <div class="toolbar">
+            <label for="fileInput" class="button button-secondary upload-btn">↑ Importar Excel / CSV</label>
+            <input id="fileInput" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden aria-label="Importar arquivo Excel XLSX ou CSV" />
+            <button class="button button-secondary" id="reportBtn" type="button">▤ Relatório PDF</button>
+            <button class="button button-secondary" id="exportBtn" type="button">↓ Exportar CSV</button>
+            <button class="button button-primary" id="newBtn" type="button">＋ Novo modo de falha</button>
+          </div>
+        </div>
+        <p class="source-notice" id="sourceNotice">Base fictícia de demonstração · Alterações não são salvas automaticamente. <a href="exemplos/fmea_modelo.xlsx" download>Baixar modelo Excel (.xlsx)</a> · <a href="docs/GUIA_DO_USUARIO.md" target="_blank" rel="noopener noreferrer">Guia de uso</a></p>
+        <div class="kpis" aria-live="polite">
+          <article class="kpi"><span>Modos de falha</span><div class="kpi-value" id="kpiTotal">—</div><small>Total no filtro atual</small><i class="kpi-icon">▦</i></article>
+          <article class="kpi"><span>Prioridade crítica</span><div class="kpi-value accent-red" id="kpiCritical">—</div><small>RPN elevado ou S ≥ 9</small><i class="kpi-icon">◇</i></article>
+          <article class="kpi"><span>RPN médio</span><div class="kpi-value" id="kpiRpn">—</div><small>Indicador exploratório</small><i class="kpi-icon">≈</i></article>
+          <article class="kpi"><span>Ações em aberto</span><div class="kpi-value accent-teal" id="kpiOpen">—</div><small>Aberta ou em andamento</small><i class="kpi-icon">↗</i></article>
+        </div>
+        <div class="analysis-grid" id="matriz">
+          <section class="panel matrix-panel" aria-labelledby="matrix-title">
+            <div class="panel-head"><div><p class="kicker">02 / ANÁLISE</p><h3 id="matrix-title">Matriz de risco</h3></div><span class="panel-note">Severidade × Ocorrência</span></div>
+            <p class="panel-intro">Escalas de 1 a 10 agrupadas em cinco níveis apenas para visualização. Cada número mostra os registros na célula.</p>
+            <div class="matrix-wrap"><div class="axis-y">SEVERIDADE</div><div class="matrix-content"><div class="matrix-row-labels" id="matrixY"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div><div id="riskMatrix" class="risk-matrix" role="img" aria-label="Matriz cinco por cinco: contagem de registros por ocorrência e severidade"></div><div class="matrix-x-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div><div class="axis-x">OCORRÊNCIA</div></div></div>
+            <div class="legend"><span><i class="dot risk-low"></i>Baixo</span><span><i class="dot risk-medium"></i>Moderado</span><span><i class="dot risk-high"></i>Alto</span><span><i class="dot risk-critical"></i>Crítico</span></div>
+          </section>
+          <section class="panel distribution-panel" aria-labelledby="distribution-title">
+            <div class="panel-head"><div><p class="kicker">03 / DISTRIBUIÇÃO</p><h3 id="distribution-title">Priorização FMEA</h3></div><span class="panel-note">Critérios ilustrativos</span></div>
+            <p class="panel-intro">RPN = Severidade × Ocorrência × Detecção. A severidade elevada também pode elevar a prioridade.</p>
+            <div class="distribution" id="priorityChart" aria-label="Distribuição de criticidade FMEA"></div>
+            <div class="insight" id="insightText" aria-live="polite"></div>
+            <a class="text-link" href="docs/metodologia.md" target="_blank" rel="noopener noreferrer">Entenda os critérios e limitações ↗</a>
+          </section>
+        </div>
+        <section class="panel guide-panel" id="guia" aria-labelledby="guide-title"><div class="panel-head"><div><p class="kicker">04 / CRITÉRIOS</p><h3 id="guide-title">Como atribuir as notas de FMEA?</h3><p class="muted">Exemplos qualitativos, ilustrativos e não normativos. A calibração para uso real precisa ser aprovada pela engenharia.</p></div><span class="panel-note">Escalas de 1 a 10</span></div><div class="guide-summary"><p>Informe a <strong>gravidade da consequência (S)</strong>, a <strong>tendência de ocorrência (O)</strong> e a <strong>dificuldade de detecção (D)</strong>. Quanto maior a nota, mais desfavorável a condição.</p><button class="button button-secondary" id="guideBtn" type="button">Consultar exemplos para cada nota (1–10)</button></div></section>
+        <section class="panel records" id="registros" aria-labelledby="records-title">
+          <div class="panel-head records-head"><div><p class="kicker">05 / PLANO DE AÇÃO</p><h3 id="records-title">Registro de modos de falha</h3><p class="muted">Pesquise, filtre, edite e exporte seu conjunto de análise.</p></div><button type="button" class="button button-ghost" id="resetBtn">↺ Restaurar exemplo</button></div>
+          <div class="filters"><label>Buscar ativo ou modo de falha<input id="searchInput" type="search" placeholder="Ex.: bomba, vazamento, motor..." /></label><label>Prioridade<select id="priorityFilter"><option value="">Todas</option><option>Crítica</option><option>Alta</option><option>Média</option><option>Baixa</option></select></label><label>Status<select id="statusFilter"><option value="">Todos</option><option>Aberta</option><option>Em andamento</option><option>Concluída</option></select></label><label>Ordenar por<select id="sortSelect"><option value="priority">Maior prioridade</option><option value="rpn">Maior RPN</option><option value="due">Prazo mais próximo</option><option value="asset">Ativo (A–Z)</option></select></label></div>
+          <div class="table-scroller"><table><thead><tr><th>ATIVO / SISTEMA</th><th>MODO DE FALHA</th><th class="num">S</th><th class="num">O</th><th class="num">D</th><th class="num">RPN</th><th>PRIORIDADE</th><th>STATUS</th><th>PRAZO</th><th>AÇÕES</th></tr></thead><tbody id="rows"></tbody></table></div>
+          <div class="table-footer"><span id="rowCount">—</span><span>S · O · D: escalas de 1 a 10</span></div>
+        </section>
+        <p class="disclaimer"><strong>Atenção:</strong> laboratório educacional independente. As faixas e recomendações são demonstrativas e não substituem FMEA formal, engenharia de segurança, normas aplicáveis ou aprovação técnica. Não use estes resultados como critério único para tomada de decisão operacional.</p>
+      </section>
+    </main>
+    <footer><div><b>RELIABILITY LAB</b> <span>© 2026 Talita Souza</span></div><span>Engenharia aplicada • Dados fictícios • Nenhuma informação enviada ao servidor</span><a href="https://github.com/talita-olv" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+  </div>
+  <dialog id="editDialog" aria-labelledby="dialogTitle"><form id="recordForm" class="dialog-body"><div class="dialog-head"><div><p class="kicker">REGISTRO FMEA</p><h2 id="dialogTitle">Novo modo de falha</h2></div><button class="icon-button" type="button" id="closeDialog" aria-label="Fechar">×</button></div><div id="formError" class="form-error" role="alert" hidden></div><div class="form-grid">
+    <label>ID do registro<input name="id" required maxlength="120" placeholder="F-017" /></label>
+    <label>Sistema<input name="sistema" required maxlength="120" placeholder="Utilidades" /></label>
+    <label>Ativo<input name="ativo" required maxlength="180" placeholder="Bomba B-101" /></label>
+    <label>Modo de falha<input name="modo_falha" required maxlength="250" placeholder="Ex.: vazamento" /></label>
+    <label>Efeito<input name="efeito" maxlength="450" /></label><label>Causa<input name="causa" maxlength="450" /></label>
+    <label>Severidade (S)<input name="severidade" type="number" min="1" max="10" step="1" value="5" required /><small class="score-hint" data-score-hint="severidade"></small></label>
+    <label>Ocorrência (O)<input name="ocorrencia" type="number" min="1" max="10" step="1" value="5" required /><small class="score-hint" data-score-hint="ocorrencia"></small></label>
+    <label>Detecção (D)<input name="deteccao" type="number" min="1" max="10" step="1" value="5" required /><small class="score-hint" data-score-hint="deteccao"></small></label>
+    <label>Status<select name="status"><option>Aberta</option><option>Em andamento</option><option>Concluída</option></select></label>
+    <label>Responsável<input name="responsavel" maxlength="120" /></label><label>Prazo<input name="prazo" type="date" /></label>
+    <label class="full">Ação recomendada<textarea name="acao" rows="2" maxlength="450" placeholder="Ação sugerida para avaliação técnica"></textarea></label>
+  </div><div class="dialog-actions"><button type="button" class="button button-secondary" id="cancelBtn">Cancelar</button><button type="submit" class="button button-primary">Salvar registro</button></div></form></dialog>
+  <dialog id="guideDialog" class="guide-dialog" aria-labelledby="guideDialogTitle"><div class="dialog-body"><div class="dialog-head"><div><p class="kicker">ESCALAS ILUSTRATIVAS</p><h2 id="guideDialogTitle">Exemplos das notas 1 a 10</h2></div><button class="icon-button" type="button" id="closeGuide" aria-label="Fechar guia">×</button></div><p class="guide-warning">Os exemplos servem para aprender a usar a ferramenta, não para classificar riscos reais sem calibração e aprovação de especialistas.</p><div id="guideTables"></div><div class="dialog-actions"><button type="button" class="button button-primary" id="doneGuide">Entendi</button></div></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="assets/app.mjs"></script>
+</body>
+</html>
