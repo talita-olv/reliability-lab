@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="assets/logo-reliability-lab.webp" alt="Reliability Lab — FMEA e Criticidade" width="370" />
-</p>
+![Reliability Lab — Identidade Talita Souza](assets/project-banner.svg)
+
+<p align="center"><img src="assets/logo-reliability-lab.webp" alt="Logo própria Reliability Lab" width="220" /></p>
 
 # Reliability Lab · FMEA & Criticidade
 
@@ -118,3 +118,7 @@ reliability-lab/
 ---
 
 Criado por **[Talita Souza](https://github.com/talita-olv)** · [LinkedIn](https://www.linkedin.com/in/talita-souza-136590122/)
+
+## Identidade visual do portfólio
+
+O **Reliability Lab** mantém seu símbolo e sua identidade de confiabilidade. Em conjunto com **SmartRoute**, **Mapa 52 Semanas** e demais soluções, utiliza uma marca-mãe comum: [Talita Souza — Engenharia, Dados e Automação](assets/talita-brand.svg). O símbolo compartilhado em SVG identifica a autoria, não substitui o nome e as finalidades técnicas do laboratório.
